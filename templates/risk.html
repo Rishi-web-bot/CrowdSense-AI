@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Risk Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="sidebar">
+    <h2>CrowdSense</h2>
+    <a href="/crowd">🎥 Crowd Control</a>
+    <a href="/risk">📊 Risk Management</a>
+</div>
+
+<div class="main">
+
+<div class="card">
+<h2>Risk Prediction Panel</h2>
+
+<form method="POST">
+
+<label>Latitude</label><br>
+<input type="text" name="latitude" required><br>
+
+<label>Longitude</label><br>
+<input type="text" name="longitude" required><br><br>
+
+<button type="submit">Predict Risk</button>
+
+</form>
+</div>
+
+{% if result %}
+<div class="card">
+<h3>Risk Result</h3>
+
+<p><b>Location:</b> {{location}}</p>
+<p><b>Temperature:</b> {{temperature}}</p>
+<p><b>Risk Level:</b>
+<span class="badge 
+{% if result=='High' %}high
+{% elif result=='Medium' %}medium
+{% else %}safe{% endif %}">
+{{result}}
+</span>
+</p>
+
+</div>
+{% endif %}
+
+</div>
+</body>
+</html>

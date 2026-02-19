@@ -1,0 +1,51 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<div class="sidebar">
+<h2>CrowdSense</h2>
+<a href="/crowd">🎥 Crowd Control</a>
+<a href="/risk">📊 Risk Management</a>
+<a href="/">⬅ Back Home</a>
+</div>
+
+<div class="main">
+
+<div class="card">
+<h2>Live Crowd Monitoring</h2>
+
+<form method="POST" enctype="multipart/form-data">
+<input type="file" name="video" required>
+<button type="submit">▶ Start Detection</button>
+<a href="/stop"><button type="button">⏹ Stop</button></a>
+</form>
+</div>
+
+<div class="card">
+<h3>Live AI Feed</h3>
+<img src="{{ url_for('video_feed') }}" width="850">
+</div>
+
+<div class="card">
+<h3>Real-Time Metrics</h3>
+
+<p>👥 People Count :
+<span class="badge medium">{{people}}</span></p>
+
+<p>🚨 Alarm Status :
+{% if status=="HIGH CROWD" %}
+<span class="badge high">HIGH ALERT</span>
+{% elif status=="MEDIUM CROWD" %}
+<span class="badge medium">MEDIUM</span>
+{% else %}
+<span class="badge safe">SAFE</span>
+{% endif %}
+</p>
+
+<p>⚡ Detection FPS :
+<span class="badge safe">{{fps}}</span></p>
+
+<p>🧠 AI Status :
+<span class="badge safe">{{ai_status}}</span></p>
+
+</div>
+
+</div>

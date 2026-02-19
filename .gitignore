@@ -1,0 +1,15 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# VS Code
+.vscode/
+
+# Uploads folder (runtime videos)
+static/uploads/
+
+# Large AI weights
+*.pt
+
+# Trained models
+*.pkl
