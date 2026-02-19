@@ -1,15 +1,47 @@
+# ------------------------------
 # Python cache
+# ------------------------------
 __pycache__/
 *.pyc
+*.pyo
 
-# VS Code
+# ------------------------------
+# VS Code settings
+# ------------------------------
 .vscode/
 
-# Uploads folder (runtime videos)
+# ------------------------------
+# Runtime uploads (generated videos/images)
+# ------------------------------
 static/uploads/
 
-# Large AI weights
+# ------------------------------
+# Dataset videos (large files)
+# ------------------------------
+datasets/videos/
+
+# ------------------------------
+# AI model weights (YOLO, etc.)
+# ------------------------------
 *.pt
 
-# Trained models
+# ------------------------------
+# Trained ML models
+# ------------------------------
 *.pkl
+
+# ------------------------------
+# Jupyter Notebook checkpoints
+# ------------------------------
+.ipynb_checkpoints/
+
+# ------------------------------
+# System files
+# ------------------------------
+.DS_Store
+Thumbs.db
+
+# ------------------------------
+# Environment files
+# ------------------------------
+.env
